@@ -1,6 +1,6 @@
 Convert MySql DDL to Typescript Interface
 
-![guide](D:\Lab\ddl-to-ts\images\guide.gif)
+![guide](.\images\guide.gif)
 
 ```
 CREATE TABLE `account_period` (
