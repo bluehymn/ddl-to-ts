@@ -1,6 +1,6 @@
 Convert MySql DDL to Typescript Interface
 
-![guide](https://github.com/bluehymn/ddl-to-ts/raw/develop/images/guide.gif)
+![guide](./images/guide.gif)
 
 ```
 CREATE TABLE `account_period` (
