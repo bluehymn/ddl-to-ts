@@ -2,6 +2,8 @@
 	"name": "ddl-to-ts",
 	"displayName": "DDL to TS",
 	"description": "convert ddl to ts interface",
+	"publisher": "bluehymn",
+	"repository": "https://github.com/bluehymn/ddl-to-ts",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.30.0"
@@ -10,14 +12,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.ddlToTs"
+		"onCommand:extension.ddl2ts"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.ddlToTs",
-				"title": "DDL to TS"
+				"command": "extension.ddl2ts",
+				"title": "DDL2TS"
 			}
 		]
 	},
@@ -29,10 +31,16 @@
 		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
-		"typescript": "^3.1.4",
-		"vscode": "^1.1.25",
-		"tslint": "^5.8.0",
+		"@types/copy-paste": "^1.1.30",
+		"@types/mocha": "^2.2.42",
 		"@types/node": "^8.10.25",
-		"@types/mocha": "^2.2.42"
+		"tslint": "^5.8.0",
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25"
+	},
+	"dependencies": {
+		"copy-paste": "^1.3.0",
+		"json-schema-to-typescript": "^6.1.0",
+		"sql-ddl-to-json-schema": "^3.0.0"
 	}
 }

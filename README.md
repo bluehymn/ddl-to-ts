@@ -1,65 +1,74 @@
-# ddl-to-ts README
+Convert MySql DDL to Typescript Interface
 
-This is the README for your extension "ddl-to-ts". After writing up a brief description, we recommend including the following sections.
+![guide](https://github.com/bluehymn/ddl-to-ts/raw/develop/images/guide.gif)
 
-## Features
+```
+CREATE TABLE `account_period` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `month` varchar(20) DEFAULT NULL COMMENT '月份',
+  `start_date` varchar(19) DEFAULT NULL COMMENT '开始日期',
+  `end_date` varchar(19) DEFAULT NULL COMMENT '结束日期',
+  `company_id` bigint(20) DEFAULT NULL COMMENT '公司id',
+  `company_name` varchar(20) DEFAULT NULL COMMENT '公司名称',
+  `create_id` bigint(20) DEFAULT NULL COMMENT '创建用户id',
+  `create_username` varchar(50) DEFAULT NULL COMMENT '创建用户登陆名',
+  `create_time` varchar(19) DEFAULT NULL COMMENT '创建时间',
+  `update_id` bigint(20) DEFAULT NULL COMMENT '更新用户id',
+  `update_username` varchar(50) DEFAULT NULL COMMENT '更新用户登录名',
+  `update_time` varchar(19) DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='对账期间表';
+```
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+```
+export interface AccountPeriod {
+  id?: number;
+  /**
+   * 月份
+   */
+  month?: string;
+  /**
+   * 开始日期
+   */
+  start_date?: string;
+  /**
+   * 结束日期
+   */
+  end_date?: string;
+  /**
+   * 公司id
+   */
+  company_id?: number;
+  /**
+   * 公司名称
+   */
+  company_name?: string;
+  /**
+   * 创建用户id
+   */
+  create_id?: number;
+  /**
+   * 创建用户登陆名
+   */
+  create_username?: string;
+  /**
+   * 创建时间
+   */
+  create_time?: string;
+  /**
+   * 更新用户id
+   */
+  update_id?: number;
+  /**
+   * 更新用户登录名
+   */
+  update_username?: string;
+  /**
+   * 更新时间
+   */
+  update_time?: string;
+  [k: string]: any;
+}
+```
